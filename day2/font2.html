@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div 태그 전체에 적용(txt1,txt2 공통적용) */
+        div {
+            font-weight: 800;
+            font-style: italic;
+            background-color: floralwhite;
+        }
+        .all {
+            font-weight: 300;
+            font-style: normal;
+            background-color: azure;
+        }
+        /* txt1 앞에 '.' 붙여서 class 속성을 찾아가게 하기 */
+        .txt1 {
+            color: lightskyblue;
+            font-size: 30px;
+            
+        }
+        .txt2 {
+            color: indianred;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- class >> 태그를 구분하기 위한 속성 -->
+    <!-- 여러 class를 같이 사용 가능 -->
+    <div class="all txt1">
+        자바자바재밌자바
+    </div>
+    <div class="txt2">
+        오라클도재밌오라클
+    </div>
+    <!-- class 재사용 가능 -->
+    <div class="txt1">
+        htmlㅗ싀html
+    </div>
+</body>
+</html>

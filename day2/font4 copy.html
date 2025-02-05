@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div로 지정할 경우 나중에 div 가 추가되었을 때 확장성이 좋지 않음. */
+        .blue {
+            color: blue;
+        }
+        .red {
+            color: red;
+        }
+        .accent {
+            font-style: italic;
+            font-weight: bold;
+            font-size: 50px;
+        }
+        .bg_pink {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="blue">
+        <div>
+            <!-- 3번 방법 포함해 .css 출력 -->
+            <!-- 우선순위 :: 3 > 2 > 1 -->
+            1. 확장자가 <span class="red accent" style="background-color: skyblue;">.css</span>인 파일을 참조하는 방법
+        </div>
+        <div>
+            2. <span class="red accent">style</span>태그안에 정의하는 방법
+        </div>
+        <div style="font-weight: bold; background-color: honeydew;">
+            3. 태그안에 style로 직접 넣는 방법
+        </div>
+    </div>
+    <span class="bg_pink">
+        <!-- inline >> span 처럼 값만큼만 차지 -->
+        <!-- block >> div 처럼 한 줄을 전부 차지 -->
+        ※ <span class="red">inline</span>과 <span class="blue">block</span> 차이 잘 기억하자
+    </span>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            font-weight: 800;
+            font-style: italic;
+            background-color: floralwhite;
+        }
+        .all {
+            font-weight: 300;
+            font-style: normal;
+            background-color: azure;
+        }
+        /* txt1 앞에 '#' 붙여서 id 찾아가게 하기 */
+        #txt1 {
+            /* rgb값 사용 가능 */
+            color: rgb(191, 229, 255);
+            font-size: 30px;
+            
+        }
+        #txt2 {
+            color: indianred;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- id >> 유니크한 값 -->
+    <div class="all" id="txt1">
+        자바자바재밌자바
+    </div>
+    <div class="all" id="txt2">
+        오라클도재밌오라클
+    </div>
+    <!-- 중복된 id 사용 / 권장하지 않음 -->
+    <div id="txt1">
+        htmlㅗ싀html
+    </div>
+</body>
+</html>

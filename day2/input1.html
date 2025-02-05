@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- input >> 입력받을 수 있는 박스 생성 / 디폴트 text  -->
+    <!-- placeholder >> 박스 안에 메세지 생성 -->
+    <!-- disabled >> 수정불가 -->
+    <div>
+    <!-- 아  이  디  : <input type="text" value="test" disabled placeholder="아이디를 입력하세요."> -->
+    아  이  디  : <input type="text" placeholder="아이디를 입력하세요.">
+    </div>
+    <div>
+    비밀번호 : <input type="password" placeholder="비밀번호 입력">
+    </div>
+    <div>
+        <!-- value >> 입력한 값 출력 -->
+        <!-- onclick >> DB 등 호출 -->
+        <!-- alert >> 알림-->
+        <input type="button" value="로그인" onclick="alert('로그인성공!')">
+    </div>
+    <hr>
+    <!-- 구분선 -->
+    <div>
+        <!-- number >> 숫자만 입력되나 'e', '.' 등도 가능함 -->
+        숫자 입력 : <input type="number">
+    </div>
+    <div>
+        <!-- date >> 년-월-일 // 최소,최대값 지정 가능 -->
+        <!-- datetime >> 시간 포함됨 -->
+        날짜 : <input type="date" min="2025-01-01" max="2025-02-05">
+    </div>
+    <div>
+        <!-- label >> 텍스트를 선택해도 태그 활성화 -->
+        <!-- checked >> 체크 된 상태로 출력-->
+        <label><input type="checkbox" checked> 자바</label>
+        <label><input type="checkbox"> 오라클</label>
+        <label><input type="checkbox"> html</label>
+    </div>
+    <div>
+        <!-- radio >> 체크박스와 다르게 중복불허 / 그룹으로 묶어줘야함 -->
+        <!-- name >> 같은 이름끼리 그룹으로 묶어줌. -->
+        <label><input type="radio" name="subject" checked> 자바</label>
+        <label><input type="radio" name="subject"> 오라클</label>
+        <label><input type="radio" name="subject"> html</label>
+    </div>
+    <div>
+        <label><input type="radio" name="gender"> 남자</label>
+        <label><input type="radio" name="gender"> 여자</label>
+    </div>
+    <div>
+        <!-- file >> 파일선택버튼 -->
+        <input type="file">
+    </div>
+    <div></div>
+        <textarea rows="10" cols="50" placeholder="자기소개"></textarea>
+    </div>
+    <div>
+        <!-- select >> 선택목록 만들기 -->
+        <select>
+            <option>자바</option>
+            <option>오라클</option>
+            <option>html</option>
+        </select>
+    </div>
+</body>
+</html>

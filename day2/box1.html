@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* margin >> 상하좌우 여백 지정 */
+            /* 값 1개, 2개(상하, 좌우), 4개(위부터 시계방향) 가질 수 있음 */
+            margin: 10px 100px 20px 50px;
+            /* margin-top >> 위쪽여백만 지정 */
+            /* margin-top: 50px; */
+        }
+        .box1 {
+            /* border-width, border-style, border-color */
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            /* text-align >> 좌우 정렬 */
+            text-align: center;
+            line-height: 100px;
+        }
+        .box2 {
+            border: 1px solid rgb(118, 102, 255);
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            /* 테두리 안쪽 배경색 */
+            background-color: honeydew;
+            /* 테두리 위쪽 선색 */
+            border-top-color: red;
+            /* 테두리의 모서리 둥금 정도 // 50% >> 원 */
+            border-radius: 50%;
+            box-shadow: 5px 5px 8px #9dddbe;
+        }
+        .pd {
+            /* 1개, 2개(상하, 좌우), 4개(위부터 시계방향) */
+            /* padding: 20px; */
+            padding: 5px 20px 5px 20px;
+            /* padding-top: 20px;
+            padding-right: 5px;
+            padding-bottom: 5px;
+            padding-left: 50px; */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1 pd">box1</div>
+    <div class="box2">box2</div>
+</body>
+</html>

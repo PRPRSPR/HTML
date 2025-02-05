@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        /* div로 지정할 경우 나중에 div 가 추가되었을 때 확장성이 좋지 않음. */
+        /* div로 지정할 경우 div 가 추가되었을 때 확장성이 좋지 않음. */
         .blue {
             color: blue;
         }
@@ -19,6 +19,10 @@
         }
         .bg_pink {
             background-color: pink;
+        }
+        .shadow {
+            /* x값, y값, 흐림값 */
+            text-shadow: 3px 3px 3px #005bff;
         }
     </style>
 </head>
@@ -36,10 +40,17 @@
             3. 태그안에 style로 직접 넣는 방법
         </div>
     </div>
+    <br>
     <span class="bg_pink">
         <!-- inline >> span 처럼 값만큼만 차지 -->
         <!-- block >> div 처럼 한 줄을 전부 차지 -->
-        ※ <span class="red">inline</span>과 <span class="blue">block</span> 차이 잘 기억하자
+        ※ <span class="red">inline</span>과 
+        <span class="blue">block</span> 차이 잘 기억하자
     </span>
+    <div></div>
+    <br>
+    <div class="shadow">
+        그림자 속성!
+    </div>
 </body>
 </html>

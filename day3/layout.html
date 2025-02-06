@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 800px;
+            /* border: 1px solid black; */
+            /* border가 width에 포함되는게 아님. 총 width = 802px 가 됨 */
+            margin: 10px auto;
+        }
+        #header {
+            width: 100%;
+            /* >>> 100% = 800px */
+            height: 150px;
+            background-color: rgb(226, 242, 255);
+        }
+        #sidebar {
+            width: 25%;
+            height: 700px;
+            background-color: rgb(224, 213, 255);
+            float: left;
+        }
+        #contents {
+            width: 75%;
+            height: 700px;
+            background-color: rgb(231, 255, 211);
+            float: left;
+        }
+        #footer {
+            width: 100%;
+            height: 150px;
+            background-color: rgb(255, 235, 208);
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            HEADER 작업 영역 / 로고나 검색영역
+        </div>
+        <div id="sidebar">
+            SIDEBAR 메뉴나 카테고리
+        </div>
+        <div id="contents">
+            CONTENTS 내용
+        </div>
+        <div id="footer">
+            FOOTER 회사소개 이용약관
+        </div>
+    </div>
+</body>
+</html>

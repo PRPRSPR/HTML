@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div {
+            display: inline-block;
+            두 특징을 혼합해서 가지고있다
+            inline 처럼 한 줄에 작업,
+            block 처럼 크기,마진 등의 작업 가능
+        } */
+        .box1 {
+            border: 2px solid black;
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+        .box2 {
+            border: 2px solid black;
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            display: inline-block;
+        }
+        .box3 {
+            border: 2px solid black;
+            background-color: green;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- 100px x 100px box 2ea -->
+    <!-- bg : blue, red / name : box1, box2 / border : 2px solid black-->
+     <div class="box1">
+        box1
+     </div>
+     <!-- 
+     <span class="box1">
+        box1
+     </span> 
+     가지고있는 값의 공간만큼만 차지. box 크기가 적용되지 않고 글자 크기만큼 작아짐. -->
+     <div class="box2">
+        box2
+     </div>
+     <div class="box3">
+        box3
+     </div>
+</body>
+</html>

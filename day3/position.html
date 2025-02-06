@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            border: 2px solid black;
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            margin-top: 5px;
+            /* static 이 디폴트 / 원래 있어야 할 위치 */
+            /* top 등으로 위치를 변경해도 이동하지 않음 */
+            /* position: static; */
+        }
+        .box2 {
+            border: 2px solid black;
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            /* relative >> 원래 위치를 기준으로 함 */
+            /* 위치 지정 시 원래 위치를 기준으로 이동 */
+            /* position: relative;
+            top: 10px;
+            left: 10px; */
+        }
+        .box3 {
+            border: 2px solid black;
+            background-color: green;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            /* absolute >> 상위 요소 중 static이 아닌 것을 기준으로 함 */
+            /* static이 아닌 것이 없다면 최상위 요소 body가 기준 */
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div style="height: 1000px;">
+        <div class="box1">
+            box1
+         </div>
+         <div style="position: static;">
+             <div class="box2">
+                box2
+             </div>
+             <div class="box3">
+                <!-- 상위 요소 중 static이 아닌 것이 없음 -->
+                <!-- 이럴 경우 body 가 기준이 됨 -->
+                <!-- 최상단(box1의 위치)에서부터 이동하게 됨 -->
+                box3
+             </div>
+         </div>
+         <div class="box1">
+            box1
+         </div>
+         <div style="position: relative;">
+            <!-- static 아님. 상위 요소가 됨 -->
+            <!-- box2의 위치를 기준으로 이동 -->
+            <div class="box2">
+               box2
+            </div>
+            <div class="box3">
+               box3
+            </div>
+        </div>
+        <div class="box1" style="position: fixed;">
+            <!-- 해당 위치에 고정됨. 스크롤 내려도 고정 -->
+            box1
+         </div>
+    </div>
+</body>
+</html>

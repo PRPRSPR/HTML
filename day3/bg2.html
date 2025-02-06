@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 600px;
+            height: 500px;
+            border: 2px solid black;
+            margin: 5px;
+            background-image: url(../day2/media/250206.PNG);
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" style="background-size: 500px;"></div>
+    <!-- box 사이즈보다 작은 배경 -->
+    <div class="box" style="background-size: contain;"></div>
+    <!-- box width를 기준으로 맞춰진 배경 -->
+    <div class="box" style="background-size: cover;"></div>
+    <!-- box height를 기준으로 맞춰진 배경 -->
+</body>
+</html>

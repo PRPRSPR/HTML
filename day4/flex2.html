@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            /* width: 700px; */
+            /* wrap 으로 자동으로 늘거나 줄어야 함 / 지정X */
+            background-color: #e1e4ee;
+            display: flex;
+            justify-content: row;
+        }
+        .box {
+            text-align: center;
+            width: 70px;
+            padding: 10px 40px;
+            margin: 5px;
+            /* 70*8 / 40*8 / 5*8 >> 560+320+40 */
+            /* container 길이 700px 을 넘어감 */
+            background-color: rgb(216, 240, 255);
+        }
+        .wrap1 {
+            flex-wrap: nowrap;
+            /* 한 줄에 표시하게 해줌 */
+        }
+        .wrap2 {
+            flex-wrap: wrap;
+            /* 여러 줄에 표시하게 해줌 */
+        }
+    </style>
+</head>
+<body>
+    <div id="container" class="wrap1">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box4</div>
+        <div class="box">box5</div>
+        <div class="box">box6</div>
+        <div class="box">box7</div>
+        <div class="box">box8</div>
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box4</div>
+        <div class="box">box5</div>
+        <div class="box">box6</div>
+        <div class="box">box7</div>
+        <div class="box">box8</div>
+    </div>
+    <br>
+    <div id="container" class="wrap2">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box4</div>
+        <div class="box">box5</div>
+        <div class="box">box6</div>
+        <div class="box">box7</div>
+        <div class="box">box8</div>
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box4</div>
+        <div class="box">box5</div>
+        <div class="box">box6</div>
+        <div class="box">box7</div>
+        <div class="box">box8</div>
+    </div>
+</body>
+</html>

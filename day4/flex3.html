@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            background-color: #e1e4ee;
+            display: flex;
+        }
+        .box {
+            text-align: center;
+            width: 70px;
+            padding: 10px 40px;
+            margin: 5px;
+            background-color: rgb(216, 240, 255);
+        }
+        .contents1 {
+            justify-content: center;
+            /* 가운데를 기준으로 정렬 */
+        }
+        .contents2 {
+            justify-content: space-around;
+            /* 일정 간격으로 정렬 */
+        }
+        .contents3 {
+            justify-content: space-between;
+            /* 양극단에 붙인 후 일정 간격으로 정렬 */
+        }
+        .contents4 {
+            justify-content: space-evenly;
+            /* 양극단 여백까지 포함해서 일정 간격으로 정렬 */
+        }
+    </style>
+</head>
+<body>
+    <div id="container" class="contents1">
+        <div class="box">center1</div>
+        <div class="box">center2</div>
+        <div class="box">center3</div>
+        <div class="box">center4</div>
+    </div>
+    <div id="container" class="contents2">
+        <div class="box">space-around1</div>
+        <div class="box">space-around2</div>
+        <div class="box">space-around3</div>
+        <div class="box">space-around4</div>
+    </div>
+    <div id="container" class="contents3">
+        <div class="box">space-between1</div>
+        <div class="box">space-between2</div>
+        <div class="box">space-between3</div>
+        <div class="box">space-between4</div>
+    </div>
+    <div id="container" class="contents4">
+        <div class="box">space-evenly1</div>
+        <div class="box">space-evenly2</div>
+        <div class="box">space-evenly3</div>
+        <div class="box">space-evenly4</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            display: grid;
+            grid-template-columns: 100px 100px 200px;
+            /* 열 // 값의 갯수가 열의 갯수가 됨 */
+            /* 이 예제의 경우 3개의 열을 가짐. */
+            /* 박스는 6개로, 열을 초과하는 박스는 2번째 행에 추가됨 */
+            /* 값은 열의 크기 */
+            grid-template-rows: 100px 200px;
+            /* 행 // 1번째 행 크기, 2번째 행 크기 */
+        }
+        .box {
+            background-color: antiquewhite;
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box4</div>
+        <div class="box">box5</div>
+        <div class="box">box6</div>
+    </div>
+</body>
+</html>

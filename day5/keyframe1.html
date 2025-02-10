@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: bisque;
+            animation-name: slider;
+            animation-duration: 3s;
+            /* duration >> 시간 지정 */
+            animation-iteration-count: infinite;
+            /* iteration-count >> 반복횟수. infinite는 무한 */
+            animation-direction: alternate;
+            /* direction >> 방향지정. alternate는 양방향 */
+        }
+        @keyframes slider {
+            /* @keyframes + 애니메이션 이름 {} */
+            from {
+                transform: translateX(0);
+            }
+            /* 50% {transform: translateX(0);} 와 같은 방법도 가능함 */
+            to {
+                transform: translateX(400px);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

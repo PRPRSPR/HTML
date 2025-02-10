@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div + p {
+            /* div 태그 다음의 첫번째 p 태그에 적용 */
+            color: red;
+        }
+        div ~ p {
+            /* div 태그 다음에 오는 모든 p 태그에 적용 */
+            background-color: bisque;
+        }
+        a[href] {
+            /* a 태그 중 href 속성을 가진 태그에만 적용 */
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div>* 과목목록</div>
+    <p style="margin-bottom: 1000px;">자바</p>
+    <a href="javascrip:;"><img src="../day2/media/java.jpg" onclick="alert('안녕자바')"></a>
+    <p><a href="javascript:;">오라클</a></p>
+    <!-- 링크 클릭해도 그 자리 유지 -->
+    <div>CSS</div>
+    <p><a href="#">HTML</a></p>
+    <!-- 링크 클릭 시 첫페이지로 돌아감. -->
+    <div>
+        <p>자바스크립트</p>
+        <!-- div 태그 안에 있어서 적용되지 않음 -->
+    </div>
+    <p>자바스크립트</p>
+</body>
+</html>

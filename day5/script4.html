@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <a href="javascript:;">
+        <img id="img1" src="../media/250207cjdthfah.jpg" onclick="fnImg()">
+        <!-- <img id="img2" src="../media/250207vkeh.jpg"> -->
+    </a>
+</body>
+</html>
+<script>
+    function fnImg(){
+        let img = document.querySelector("#img1");
+        img.src = "../media/250207vkeh.jpg";
+    }
+</script>

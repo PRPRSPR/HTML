@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            width: 200px;
+            height: 280px;
+            margin: 40px;
+            background-image: url(../media/250210wlfkcl.jpg);
+            background-size: cover;
+            transition: transform 3s, background-image 1s 1s;
+            /* background-image 1s 1s >> 1초 딜레이 후 1초 동안. */
+            /* opacity: 0; */
+            /* 투명도 조절 */
+        }
+        .card:hover {
+            transform:  rotateY(180deg);
+            background-image: url(../media/250210zkemenltaus.png);
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="card"></div>
+</body>
+</html>

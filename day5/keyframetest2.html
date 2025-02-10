@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            width: 200px;
+            height: 280px;
+            margin: 40px;
+            position: relative;
+            transition: transform 3s;
+        }
+        .img1, .img2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            transition: opacity 3s;
+        }
+        .img1 {
+            background-image: url(../media/250210wlfkcl.jpg);
+            opacity: 1;
+        }
+        .img2 {
+            background-image: url(../media/250210zkemenltaus.png);
+            opacity: 0;
+        }
+        .card:hover {
+            transform: rotateY(180deg);
+        }
+        .card:hover .img1 {
+            opacity: 0; 
+        }
+        .card:hover .img2 {
+            opacity: 1;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="img1"></div>
+        <div class="img2"></div>
+    </div>
+</body>
+</html>

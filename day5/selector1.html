@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* 모든 div 태그에 적용 */
+            color: blue;
+        }
+        .txt1 {
+            font-weight: bold;
+        }
+        /* #id {
+            font-size: 30px;
+        } */
+        /* 선택자 :: div .txt1 #id */
+        span {
+            /* 모든 span 태그에 적용 */
+            background-color: bisque;
+        }
+        div span {
+            /* div 태그 '안에 있는' 모든 span 태그에 적용됨 */
+            font-size: 30px;
+        }
+        div, span {
+            /* 모든 div 태그'와' 모든 span 태그에 적용 */
+            border: 1px solid black;
+        }
+        div > span {
+            /* div 태그의 '자식인' span 태그에만 적용됨 */
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="txt1">
+        <a><span>자바바바</span></a>
+        <!-- a 태그 안에 있어도 span style 적용됨. -->
+        <!-- div > span style은 적용되지 않음. -->
+        <!-- 이 div 태그의 자식요소는 a 태그. -->
+    </div>
+    <div class="txt1">
+        <p>CSS</p>
+        <!-- div 태그의 자식요소 중 하나 -->
+        <span>HTMLMTH</span>
+        <!-- div > span style 적용됨. -->
+        <!-- 이 div 태그의 자식요소는 p, span 태그. -->
+    </div>
+    <span>오라클라오</span>
+</body>
+</html>

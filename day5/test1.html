@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #txt {
+            font-size: 25px;
+            color: green;
+            background-color: beige;
+        }
+    </style>
+</head>
+<body>
+    <div id="txt">자바는 재밌다!</div>
+    <div>
+        <button onclick="fnColor()">색 변경</button>
+    </div>
+</body>
+</html>
+<script>
+    function fnColor() {
+        let col = document.querySelector("#txt");
+        // col.style.color = "blue";
+        // console.log(col.style.color);
+        // 콘솔에 blue가 출력됨
+
+        if (col.style.color=="blue"){
+            col.style.color = "red";
+            col.style.backgroundColor = "cornsilk";
+        } else if(col.style.color=="red") {
+            col.style.color = "green";
+            col.style.backgroundColor = "beige";
+        } else {
+            col.style.color = "blue";
+            col.style.backgroundColor = "azure";
+        }
+        // 문서로 txt를 가져왔을때 style로 따로 지정된 부분은 포함되지 않음.
+        // 조건을 col.style.color == "green" 만 줬다면 if문 작동하지 않음
+        // col.style.backgroundColor >> background-color를 카멜법으로 작성
+
+    }
+</script>

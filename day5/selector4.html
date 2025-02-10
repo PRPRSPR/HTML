@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li:first-child { 
+            /* 부모 요소의 첫번째 자식 li 태그에 적용 */
+            font-style: italic;
+        }
+        li:nth-child(2) {
+            /* nth-child(2) << 2번째 태그에 적용 */
+            color: red;
+        }
+        li:nth-child(2n+1) {
+            /* 2n, even >> 2의 배수, 짝수번째 태그에 적용 */
+            /* 2n+1, odd >> 홀수번째 태그에 적용 */
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>자바</li>
+        <li>DB</li>
+        <li>HTML/CSS</li>
+        <li>javascript/jquery</li>
+        <li>JSP</li>
+    </ol>
+    <ul>
+        <li>Git</li>
+        <li>UML</li>
+        <li>Figma</li>
+    </ul>
+</body>
+</html>

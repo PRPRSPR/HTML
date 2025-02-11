@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 10px 5px;
+        }
+
+        img {
+            width: 300px;
+            height: 450px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label>
+            <input type="radio" name="subject" value="java">자바
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="radio" name="subject" value="oracle">오라클
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="radio" name="subject" value="html">html/css/javascript
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="radio" name="subject" value="jquery">jQuery
+        </label>
+    </div>
+    <div>
+        <button onclick="fnSubImg()">클릭!</button>
+    </div>
+    <div>
+        <img id="subImg" src="" alt="이미지">
+        <!-- src 를 비워뒀기 때문에 display를 none으로 바꿔준다 -->
+        <!-- 바꾸지 않으면 오류처럼 깨진 이미지 그림이 출력됨 -->
+    </div>
+</body>
+
+</html>
+<script>
+    function fnSubImg() {
+        let subject = document.querySelector("input[name='subject']:checked").value;
+        let subImg = document.querySelector("#subImg");
+        subImg.style.display = "inline";
+        // if(subject == "java"){
+        //    subImg.src = "../media/250211java.jpg"
+        // } else if(subject == "oracle") {
+        //     subImg.src = "../media/250211oracle.jpg"
+        // } else if(subject == "html") {
+        //     subImg.src = "../media/250211html.jpg"
+        // } else if(subject == "jquery") {
+        //     subImg.src = "../media/250211jquery.jpg"
+        // } else {
+        //     alert("버튼을 선택하세요");
+        // }
+        subImg.src = "../media/250211" + subject + ".jpg"
+    }
+</script>

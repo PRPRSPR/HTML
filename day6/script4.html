@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- radio >> 중복 없음 -->
+    <label><input type="radio" name="subject" value="java">java</label>
+    <label><input type="radio" name="subject" value="html">html</label>
+    <label><input type="radio" name="subject" value="oracle">oracle</label>
+    <label><input type="radio" name="subject" value="jquery">jquery</label>
+    <button onclick="fnSubject()">선택!</button>
+</body>
+</html>
+<script>
+    function fnSubject(){
+        let subject = document.querySelector("input[name='subject']:checked");
+        // 라디오 버튼이기때문에 가능
+        // 체크박스의 경우 중복이 있을 수 있음
+        if(subject){
+            // alert("선택 함");
+            alert(subject.value);
+        } else {
+            alert("선택 안함");
+        }
+    }
+</script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 10px 5px;
+        }
+
+        img {
+            width: 300px;
+            height: 450px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- checkbox >> 중복 허용 -->
+    <div>
+        <label>
+            <input type="checkbox" name="subject" value="java">자바
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" name="subject" value="oracle">오라클
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" name="subject" value="html">html/css/javascript
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" name="subject" value="jquery">jQuery
+        </label>
+    </div>
+    <div>
+        <button onclick="fnSubject()">클릭!</button>
+    </div>
+</body>
+
+</html>
+<script>
+    function fnSubject(){
+        // let subject = document.querySelector("input[name='subject']:checked");
+        // 중복 선택할 경우, 가장 위에 있는 node를 가져옴
+        let subject = document.querySelectorAll("input[name='subject']:checked");
+        // querySelector'All' >> 선택한 값들을 list 형태로 저장
+        // class명,태그명 등 그 값이 여럿일 수 있다면 All 붙일 것
+        for(let i=0; i<subject.length; i++){
+            console.log(subject[i].value);
+            // 선택한 값들 콘솔에 출력
+        }
+    }
+</script>

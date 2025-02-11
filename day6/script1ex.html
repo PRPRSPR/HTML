@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>숫자 입력 : <input id="num"></div>
+    <button onclick="fnAppend()">리스트 추가</button>
+    <ul id="list"></ul>
+</body>
+
+</html>
+<script>
+    // 입력받은 값을 list에 넣기
+    // function fnAppend(){
+    //     let list = document.querySelector("#list");
+    //     let liNum = document.createElement("li");
+    //     let num = document.getElementById("num").value;
+    //     liNum.innerText = num;
+    //     // console.log(num);
+    //     list.appendChild(liNum);
+    // }
+    // 1부터 입력받은 값까지 list에 넣기
+    // 홀수는 색깔 바꾸기
+    function fnAppend() {
+        let list = document.querySelector("#list");
+        // 값 넣어줄 list 위치 찾기
+        let num = document.getElementById("num").value;
+        // 입력받은 값 가져오기
+        let style2n1 = document.createAttribute("style");
+        style2n1.value = "color : #ce8600;";
+        // style 속성 만들어서 글자색 지정하기 (홀수값)
+        for (let i = 1; i <= num; i++) {
+            // 입력받은 값까지 반복
+            let liNum = document.createElement("li");
+            // <li></li> 생성
+            liNum.innerText = i;
+            // <li> i </li>
+            console.log(liNum);
+            // 콘솔로그 확인용
+            if (i % 2 == 1) {
+                // 홀수값 찾기
+                liNum.setAttributeNode(style2n1.cloneNode(true));
+                // 홀수값에 style 속성 부여해주기
+                // 반복문 밖에 있는 style 속성 '생성문'을 넣어도 됨.
+                // 현재 만들어둔 속성은 하나뿐이라 클론을 만들어 부여해줌.
+            } else {
+                // 짝수값 찾기
+                let stl2n = document.createAttribute("style");
+                stl2n.value = "color : #46833a;";
+                liNum.setAttributeNode(stl2n);
+                // style 속성 생성, 글자색 지정
+                // 짝수값에 style 속성 부여
+                // 홀수값과 다르게 생성문을 넣음.
+            }
+            list.appendChild(liNum);
+            // list 에 liNum(<li> i </li>)을 자식요소로 추가
+        }
+    }
+</script>

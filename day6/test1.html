@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS3 애니메이션</title>
+    <style>
+        #container {
+            max-width: 1000px;
+            margin: 20px auto;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .prod-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .prod-list li {
+            height: 300px;
+            padding: 0;
+            margin: 10px;
+            overflow: hidden;
+            /* 지정한 범위를 넘어가면: 가려진다; */
+            /* opcity 사용했을 때보다 기능적으로 좋음 */
+            position: relative;
+        }
+
+        .prod-list img {
+            width: 300px;
+            height: 300px;
+
+        }
+
+        .caption {
+            background-color: rgb(0, 0, 0, 0.5);
+            /* 투명도 >> 0 ~ 1 */
+            width: 300px;
+            /* width: 100%; 가능 */
+            height: 250px;
+            color: white;
+            position: absolute;
+            top: 300px;
+            /* opacity: 0; */
+            text-align: center;
+            padding-top: 50px;
+            transition: all 1s;
+        }
+
+        /* img:hover +.caption {
+        top: 0;
+        opacity: 0.8;
+    } */
+
+        li:hover .caption {
+            transform: translateY(-300px);
+            /* opacity: 1; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>판매 목록</h1>
+        <ul class="prod-list">
+            <li>
+                <img src="../media/250210wlfkcl.jpg">
+                <div class="caption">
+                    <h2>전포카드</h2>
+                    <p>전설의포켓몬</p>
+                    <p>가격 : 5,000,000원</p>
+                </div>
+            </li>
+            <li>
+                <img src="../media/250210zkemenltaus.png">
+                <div class="caption">
+                    <h2>포켓몬카드</h2>
+                    <p>랜덤 포켓몬</p>
+                    <p>가격 : 300,000원</p>
+                </div>
+            </li>
+            <li>
+                <img src="../media/dumchi.jpg">
+                <div class="caption">
+                    <h2>치와와 포토카드</h2>
+                    <p>왜 이렇게 많은 걸 바라는데 세상아</p>
+                    <p>가격 : 999,999,999원</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

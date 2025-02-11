@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>과목목록</h1>
+    <h3 id="js">자바스크립트</h3>
+    <hr>
+    <div id="list">
+        <p id="java">자바</p>
+        <p id="oracle" style="color: red;">오라클</p>
+        <p id="html">HTML</p>
+    </div>
+    <hr>
+    <!-- 버튼영역 -->
+     <button onclick="fnAppend()">appendChild</button>
+     <button onclick="fnBefore()">insertBefore</button>
+     <button onclick="fnCreateNode()">createElement</button>
+     <button onclick="fnCreateAttr()">createAttribute</button>
+     <button onclick="fnRemoveNode()">removeChild</button>
+     <button onclick="fnRemoveAttr()">removeAttribute</button>
+     <button onclick="fnClone()">cloneNode</button>
+</body>
+</html>
+<script>
+    // 순수(바닐라)자바스크립트
+    function fnAppend(){
+        // Append > 이어붙이기
+        let list = document.querySelector("#list");
+        let js = document.getElementById("js");
+        list.appendChild(js);
+        // js가 list의 자식요소로 바뀜
+    }
+    function fnBefore(){
+        let list = document.querySelector("#list");
+        let js = document.getElementById("js");
+        let oracle = document.getElementById("oracle");
+        list.insertBefore(js, oracle);
+        // js를 oracle 전에 삽입
+    }
+    // function fnCreateNode(){
+    //     // 새로운 노드를 만들어서 list의 자식요소로 만들기
+    //     let list = document.querySelector("#list");
+    //     let jquery = document.createElement("p");
+    //     // ㄴ <p></p> 안에 텍스트가 없는 상태
+    //     jquery.innerText = "jquery";
+    //     // ㄴ <p>jquery</p>
+    //     list.appendChild(jquery);   
+            //  리스트 안에 <p>jquery</p> 생성 확인됨
+    // }
+    function fnCreateNode(){
+        let list = document.querySelector("#list");
+        let jquery = document.createElement("p");
+        // jquery.innerText = "<strong>jquery</strong>";
+        // 태그도 text로 인식. "<strong>jquery</strong>" 출력
+        jquery.innerHTML = "<strong>jquery</strong>";
+        // 태그적용됨. "jquery" 가 강조되어 출력
+        list.appendChild(jquery);        
+    }
+    function fnCreateAttr(){
+        let list = document.querySelector("#list");
+        let jquery = document.createElement("p");
+        jquery.innerText = "jquery";
+        // style 만들기
+        let style = document.createAttribute("style");
+        style.value = "color : blue; font-weight : bold;";
+        // jquery에 style 부여하기 *setAttribute'Node'*
+        jquery.setAttributeNode(style);
+        // list에 추가
+        list.appendChild(jquery);
+    }
+    function fnRemoveNode(){
+        let list = document.querySelector("#list");
+        let oracle = document.getElementById("oracle");
+        list.removeChild(oracle);
+    }
+    function fnRemoveAttr(){
+        let oracle = document.getElementById("oracle");
+        oracle.removeAttribute("style");
+        // oracle의 style 속성 삭제
+    }
+    function fnClone(){
+        let list = document.querySelector("#list");
+        let js = document.getElementById("js");
+        list.appendChild(js.cloneNode(true));
+        // 원본 유지, 클론(복제본) 만들어서 list에 추가
+        // js.cloneNode(true) >> js의 cloneNode 클론을 만든다. (true/false)
+    }
+</script>

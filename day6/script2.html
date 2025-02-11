@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 800px;
+            height: 800px;
+            margin: 20px auto;
+            border: 2px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img id="chi" src="../media/250207cjdthfah.jpg" style="width: 800px;">
+    </div>
+    <!-- onclick /  -->
+</body>
+</html>
+<script>
+    let container = document.querySelector("#container");
+    container.onclick = (e)=>{
+        // e >> event 객체
+        console.log(e);
+        // page X,Y >> 클릭된 위치 좌표
+        // target >> 클릭된 요소
+        // target>innerText 등 확인 가능
+        alert(e.pageX + "," + e.pageY);
+    };
+    // container에 onclick 부여, 함수로 연결
+    // 바로 함수로 연결하기에 익명함수 사용 가능
+
+    let img = document.querySelector("#chi");
+    img.onclick = function(){
+        // alert(img.src);
+        alert(this.src);
+        this.src = "../media/250207cldhkdhk.jpg";
+    };
+</script>

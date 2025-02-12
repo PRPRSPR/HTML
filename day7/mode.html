@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+        
+        .light-mode{
+            background-color: rgb(235, 230, 225);
+            color: #364d97;
+        }
+        .dark-mode{
+            background-color: #403e4d;
+            color: rgb(243, 221, 208);
+        }
+        .material-symbols-outlined{
+            margin: 20px 30px;
+            cursor: pointer;
+            font-size: 30px;
+            float: right;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <div>
+        <span class="material-symbols-outlined" onclick="fnMode()">light_mode</span>
+    </div>
+    <div>
+        <ul>
+            <li>자바</li>
+            <li>자바스크립트</li>
+            <li>jQuery</li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    function fnMode(){
+        let body = document.body;
+        // body 태그는 바로 가져올 수 있다
+        body.classList.toggle('dark-mode');
+        body.classList.toggle('light-mode');
+    }
+</script>

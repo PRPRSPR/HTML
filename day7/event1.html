@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="img" src="../media/250210wlfkcl.jpg" width="300" height="380">
+</body>
+</html>
+<script>
+    let img = document.querySelector("#img");
+    // event 부착이 가능
+    img.addEventListener("mouseover", ()=>{
+        // change >> 값이 변화하면 이벤트 발생
+        // mouseover >> hover와 같음.
+        // ()=>{} 바로 함수로.
+        img.src = "../media/250210zkemenltaus.png";
+    });
+    img.addEventListener("mouseout", ()=>{
+        // mouseout >> 마우스가 해당 영역에서 벗어나면 실행
+        img.src = "../media/250210wlfkcl.jpg";
+    })
+</script>

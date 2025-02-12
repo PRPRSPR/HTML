@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+        #container {
+            width: 800px;
+            margin: 30px auto;
+        }
+        li {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>메모장</h2>
+        <div>
+            <input id="txt" type="text">
+            <button onclick="fnAppend()">추가</button>
+        </div>
+        <hr>
+        <ul id="itemList"></ul>
+    </div>
+</body>
+</html>
+<script>
+    let list = document.querySelector("#itemList");
+    function fnAppend(){
+        let txt = document.querySelector("#txt").value;
+        let item = document.createElement("li");
+        item.innerHTML = txt + '<span class="material-symbols-outlined">delete</span>';
+
+        item.onclick= function(e){
+            if(!confirm("정말 삭제하시겠습니까?")){
+                return;
+            }
+            list.removeChild(e.target); // e.target = this
+        }
+
+        list.appendChild(item);
+        document.querySelector("#txt").value = "";
+    }
+
+    
+</script>

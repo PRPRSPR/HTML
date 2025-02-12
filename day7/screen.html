@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="fnPopup()">팝업</button>
+</body>
+</html>
+<script>
+    console.log("width ==>",screen.width);
+    // width ==> 1920
+    console.log("height ==>",screen.height);
+    // height ==> 1080
+    console.log("availWidth ==>",screen.availWidth);
+    // availWidth ==> 1920
+    console.log("availHeight ==>",screen.availHeight);
+    // availHeight ==> 1040 >> 작업표시줄 제외한 값
+
+    function fnPopup(){
+        let top = (screen.availHeight-500)/2;
+        let left = (screen.availWidth-500)/2;
+        console.log(top);
+        console.log(left);
+        window.open('time.html','time',`width=500,height=500, left=${left}, top=${top}`);
+        // 
+    }
+</script>

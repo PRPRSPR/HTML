@@ -20,35 +20,38 @@
 </head>
 <body>
     <button onclick="fnUserList()">호출</button>
-    <div id="container">
-        <table id="userTable">
-            <tr>
-                <th>아이디</th>
-                <th>이름</th>
-                <th>이메일</th>
-                <th>웹사이트</th>
-            </tr>
-        </table>
-    </div>
+    <div id="contents"></div>
 </body>
 </html>
 <script>
+    let table = document.createElement("table");
+    // 함수 실행 전 table 태그 생성해두기
     function fnUserList(){
+        table.innerHTML="";
+        // 함수 실행 > 테이블 초기화
         $.ajax({
             url : "https://jsonplaceholder.typicode.com/users",
             dataType : "json",
             type : "Get",
             data : {},
             success : function(data){
-                let table = document.querySelector("#userTable");
-                console.log(data[0]); 
-                // for(let i=0; i<data.length; i++){
-                //     let tr = document.createElement("tr");
-                //     let td = document.createElement("td");
-                    
-
-                // }
-                
+                // hashmap으로 구성된 10개의 ArrayList를 가짐
+                let rowHeader = document.createElement("tr");
+                rowHeader.innerHTML = "<th>아이디</th><th>이름</th><th>이메일</th><th>웹사이트</th>";
+                table.appendChild(rowHeader);
+                // tr 태그 생성 및 행의 header 생성해 table 에 추가 
+                // (column이 지정되어있으므로 하드코딩함)
+                for(let i=0; i<data.length; i++){
+                    // data 의 길이(10)만큼 반복
+                    let row = document.createElement("tr");
+                    row.innerHTML = "<td>"+data[i].id+"</td>"+"<td>"+data[i].name+"</td>"+"<td>"+data[i].email+"</td>"+"<td>"+data[i].website+"</td>";
+                    table.appendChild(row);
+                    // 행 row 생성 후 data list에서 column 요소들을 꺼내 담고
+                    // 완성된 행을 table에 추가
+                }
+                let contents = document.getElementById("contents")
+                contents.appendChild(table);
+                // 완성된 table을 contents 영역에 출력될 수 있도록 자녀요소로 추가
             }
         });
     }

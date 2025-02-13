@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>나이 : <input type="number" v-model="inputAge"></div>
+        <div v-if="age >= 30" style="color: blue;">30세 이상 입니다</div>
+        <div v-else-if="age==''">{{age}}</div>
+        <!-- <div v-if="age!=''"> 으로 조건문을 감싸줘도 동일함-->
+        <div v-else style="color: red;">30세 미만 입니다</div>
+        <button @click="fnAge">클릭</button>
+    </div>
+</body>
+</html>
+
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                age : "",
+                inputAge:""
+            };
+        },
+        methods: {
+            fnAge:function(){
+                let self = this;
+                self.age = self.inputAge;
+            }
+        },
+        mounted() {
+            // 처음 시작할 때 실행되는 부분
+        }
+    });
+
+    app.mount('#app');
+</script>

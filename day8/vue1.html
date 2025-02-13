@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-if="name == ''">
+            <!-- 조건문 생성 가능 > name 변수가 빈값이 아니면 input 사라짐 -->
+            <!-- <input v-model="name"></input> -->
+            <!-- 아래 스크립트에서 변수의 name 과 연동 -->
+            <input v-model="inputName"></input>
+        </div>
+        <div v-else-if="name=='홍길동'">
+            <!-- else if 사용 가능 > input 위치에 text 출력 -->
+            {{name}}님은 관리자 입니다.
+        </div>
+        <div v-else>
+            <!-- else 사용 가능 > input이 사라지지 않고 비활성화 -->
+            <input v-model="inputName" disabled></input>
+        </div>
+        <dic>{{name}}</dic>
+        <!-- 중괄호 2겹 -->
+        <button @click="fnName()">클릭</button>
+        <!-- @click="fnName" >> ()생략 가능 -->
+    </div>
+</body>
+</html>
+
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                // 변수
+
+                name : "",
+                age : "",
+
+                inputName: ""
+                // 입력받은 값이 들어감
+            };
+        },
+        methods: {
+            // 함수(메소드)
+            fnName : function(){
+                // key:value
+
+                // this.name = "김철수";
+                // 다른 영역에서 변수 사용 > this 붙여줘야함
+                let self = this;
+                self.name = self.inputName;
+            }
+            
+        },
+        mounted() {
+            // 처음 시작할 때 실행되는 부분
+        }
+    });
+
+    app.mount('#app');
+</script>

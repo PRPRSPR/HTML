@@ -29,63 +29,54 @@
 </head>
 <body>
     <div id="app">
-        <!-- 1. 홀수번째 이메일 파란색으로 -->
-         <!-- 2. 이름 클릭 시 해당 유저의 상세정보 출력 -->
-          <!-- 3.상세정보 출력 시 테이블 보이지 않음. 돌아가기 버튼으로 다시 테이블로 돌아옴. -->
         <div>
-            <table v-if="!viewFlg">
+            <table v-if="!viewFlg && !updateFlg">
                 <tr>
                     <th>번호</th>
-                    <!-- 아이디 대신 번호 -->
                     <th>이름</th>
                     <th>이메일</th>
                     <th>웹사이트</th>
                     <th>삭제</th>
-                    <!-- 4. 삭제버튼 누를 시 목록에서 삭제 -->
-                     <!-- DB에서 가져온 정보가 아니기때문에 완전한 삭제 불가. -->
+                    <th>수정</th>
                 </tr>
                 <tr v-for="(item,index) in list">
-                    <!-- item >> (item,index) -->
 
-                    <!-- <td>{{index}}</td> -->
-                    <!-- 0부터 순서대로 출력됨 -->
                     <td>{{index+1}}</td>
 
                     <td>
-                        <a href="javascript:;" @click="fnSetUser(item)">{{item.name}}</a>
+                        <a href="javascript:;" @click="fnGetUser(item)">{{item.name}}</a>
                     </td>
 
-                    <!-- 1. -->
-                    <!-- <td v-if="(index+1)%2==1" style="color: blue;">{{item.email}}</td> -->
-                    <!-- <td v-else style="color: violet;">{{item.email}}</td> -->
-                     <!-- 가독성 떨어짐. 행의 갯수가 5개처럼 보일 수 있음-->
-
-                    <!-- <td>
-                        <span v-if="(index+1)%2==1" style="color: blue;">{{item.email}}</span>
-                        <span v-else style="color: violet;">{{item.email}}</span>
-                    </td> -->
-                    <!-- 태그에 직접 style 줌. 스타일로 만들어주면 재사용 가능 -->
                     <td>
                         <span v-if="(index+1)%2==1" class="blue-txt">{{item.email}}</span>
                         <span v-else class="violet-txt">{{item.email}}</span>
                     </td>
-                    <!-- class 로 만들어서 작업문에 추가해주기 -->
 
                     <td>{{item.website}}</td>
                     <td><button @click="fnDeltd(index)">삭제</button></td>
-                    <!-- 삭제할 정보의 index를 보낸다 -->
+                    <td><button @click="fnEdit(item)">수정</button></td>
                 </tr>
             </table>
             <div v-if="viewFlg">
-                <!-- viewFlg가 true일 때(이름을 클릭해 상세정보를 불러올때)만 보이기 -->
-                상세정보
-                <div>이름 : {{user.name}}</div>
-                <div>번호 : {{user.phone}}</div>
-                <div>회사명 : {{user.company.name}}</div>
-                <!-- map 안에 map이 있는 형태 -->
-                <div>주소 : {{user.address.street}}</div>
-                <div style="margin-top: 5px;">
-                    <button @click="viewFlg=!viewFlg">돌아가기</button>
+                <div v-if="!updateFlg">
+                    상세정보
+                    <div>이름 : {{user.name}}</div>
+                    <div>번호 : {{user.phone}}</div>
+                    <div>회사명 : {{user.company.name}}</div>
+                    <div>주소 : {{user.address.street}}</div>
+                    <div style="margin-top: 5px;">
+                        <button @click="viewFlg=!viewFlg">돌아가기</button>
+                    </div>
+                </div>
+                <div v-else>
+                    <div>이름 : <input v-model="user.name" disabled></div>
+                    <!-- user.name을 리스트에서 꺼내 input 박스에 출력한다. -->
+                    <div>이메일 : <input v-model="email"></div>
+                    <div>웹사이트 : <input v-model="website"></div>
+                    <div style="margin-top: 5px;">
+                        <button @click="fnSave">저장</button>
+                        <button @click="viewFlg=!viewFlg">돌아가기</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -100,8 +91,10 @@
                 // 변수
                 list : [],
                 user : {},
-                viewFlg : false
-                // Flg 디폴트를 false로 설정 > 함수 실행 전 상세정보가 보이지 않게함
+                viewFlg : false,
+                updateFlg : false,
+                email:"",
+                website:""
             };
         },
         methods: {
@@ -119,25 +112,37 @@
                     }
                 });
             },
-            fnSetUser:function(item){
+
+            fnGetUser:function(item){
                 let self = this;
                 console.log(item);
-                // 클릭한 '사용자의 정보' 콘솔 출력
                 self.user = item;
                 self.viewFlg = true;
-                // 함수 실행 시 true로 변경. > 상세정보 출력
+                self.updateFlg = false;
             },
+            
             fnDeltd:function(index){
                 let self = this;
-                // splice >> 리스트에서 값을 수정하거나 삭제 (start, deleteCount)
                 if(!confirm("정말 삭제하시겠습니까?")){
-                    // false(취소)일 경우 실행
                     return;
                 }
-                // true일 경우 아래 실행
                 self.list.splice(index, 1);
-                // index 위치부터 1개 값 삭제
+            },
 
+            fnEdit:function(item){
+                let self = this;
+                console.log(item);
+                self.viewFlg = true;
+                self.user = item;
+                self.email = item.email;
+                self.website = itetm.website;
+                self.updateFlg = true;
+            },
+            fnSave:function(){
+                let self = this;
+                self.viewFlg = !self.viewFlg;
+                self.user.email = self.email;
+                self.user.website = self.website;
             }
             
         },
